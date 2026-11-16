@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest Downloader</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">P</div>
+          <div>
+            <h1>Pinterest Downloader</h1>
+            <div class="status-line">
+              <span class="status-dot" id="statusDot"></span>
+              <span id="pageStatus">Loading…</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="card">
+        <label class="label" for="basename">File name</label>
+        <input
+          type="text"
+          id="basename"
+          class="input"
+          placeholder="e.g. cats"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <div class="hint">
+          Files save as <span class="mono" id="preview0">name</span><span class="muted">.ext</span>,
+          <span class="mono" id="preview1">name1</span><span class="muted">.ext</span>,
+          <span class="mono" id="preview2">name2</span><span class="muted">.ext</span> …
+        </div>
+      </section>
+
+      <section class="card">
+        <label class="label">Media types</label>
+        <div class="chips">
+          <label class="chip">
+            <input type="checkbox" id="type-video" checked />
+            <span>Videos</span>
+          </label>
+          <label class="chip">
+            <input type="checkbox" id="type-gif" checked />
+            <span>GIFs</span>
+          </label>
+          <label class="chip">
+            <input type="checkbox" id="type-image" checked />
+            <span>Images</span>
+          </label>
+        </div>
+        <div class="hint">
+          On a pin page, related pins Pinterest shows below the main pin are also
+          collected — scroll to load more.
+        </div>
+      </section>
+
+      <section class="card stat-card">
+        <div class="stat">
+          <div class="stat-label">Found</div>
+          <div class="stat-value" id="foundCount">0</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-label">Videos</div>
+          <div class="stat-value mini" id="videoCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">GIFs</div>
+          <div class="stat-value mini" id="gifCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Images</div>
+          <div class="stat-value mini" id="imageCount">0</div>
+        </div>
+      </section>
+
+      <section class="card scroll-card">
+        <div class="scroll-text">
+          <div class="stat-label">Auto-scroll</div>
+          <div class="scroll-sub" id="scrollSub">Idle</div>
+        </div>
+        <button id="scrollBtn" class="btn btn-secondary">Start scroll</button>
+      </section>
+
+      <section class="actions">
+        <button id="downloadBtn" class="btn btn-primary" disabled>
+          Download all
+        </button>
+        <button id="clearBtn" class="btn btn-ghost">Clear</button>
+      </section>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

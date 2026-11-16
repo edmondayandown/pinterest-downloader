@@ -1,0 +1,355 @@
+/* Pinterest Media Downloader — popup
+ * Style: clean white / Notion-Apple
+ * Palette: #FFFFFF bg, #1A1A1A primary text, #666 secondary, #EAEAEA borders
+ * Typography: system-ui / Inter
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+    Roboto, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 360px;
+  min-height: 100px;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* ---- header ------------------------------------------------------------- */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #666;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c8c8c8;
+  display: inline-block;
+}
+
+.status-dot.ok {
+  background: #34c759;
+}
+
+.status-dot.warn {
+  background: #ff9500;
+}
+
+.status-dot.err {
+  background: #ff3b30;
+}
+
+/* ---- cards -------------------------------------------------------------- */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.06);
+}
+
+.input:disabled {
+  background: #f7f7f7;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  color: #1a1a1a;
+  background: #f4f4f4;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.muted {
+  color: #999;
+}
+
+/* ---- chips -------------------------------------------------------------- */
+
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 5px 11px;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s;
+  background: #ffffff;
+}
+
+.chip:hover {
+  background: #fafafa;
+}
+
+.chip input {
+  margin: 0;
+  accent-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.chip input:not(:checked) + span {
+  color: #999;
+}
+
+/* ---- stat card ---------------------------------------------------------- */
+
+.stat-card {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.stat {
+  flex: 1;
+}
+
+.stat-divider {
+  width: 1px;
+  background: #eaeaea;
+  margin: -2px 0;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value.mini {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ---- scroll card -------------------------------------------------------- */
+
+.scroll-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+
+.scroll-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scroll-sub {
+  font-size: 12px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.scroll-sub.active {
+  color: #1a1a1a;
+}
+
+/* ---- actions ------------------------------------------------------------ */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+  line-height: 1.2;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #1a1a1a;
+  color: #ffffff;
+  flex: 1;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #000000;
+}
+
+.btn-primary:active:not(:disabled) {
+  background: #333333;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border-color: #e5e5e5;
+  color: #1a1a1a;
+  min-width: 110px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #fafafa;
+}
+
+.btn-secondary.active {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #666;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #f4f4f4;
+  color: #1a1a1a;
+}
+
+/* ---- toast -------------------------------------------------------------- */
+
+.toast {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  z-index: 100;
+  white-space: nowrap;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
